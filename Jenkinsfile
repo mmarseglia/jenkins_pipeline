@@ -1,15 +1,19 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'maven:alpine'
+    }
+    
+  }
   stages {
     stage('stage') {
       steps {
         echo 'hello'
       }
     }
-    
     stage('maven version') {
       steps {
-        sh "mvn -v"
+        sh 'mvn -v'
       }
     }
   }
