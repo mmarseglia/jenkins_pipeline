@@ -6,5 +6,10 @@ pipeline {
         echo 'hello'
       }
     }
+    
+    stage('maven version') {
+      steps {
+        sh "mvn -v"
+      }
   }
 }
